@@ -10,18 +10,13 @@ module.exports = function( grunt ) {
 		'amd-dist': {
 			all: {
 				options: {
-					//remove requirejs dependency from built package (almond)
 					standalone: true,
-					//build standalone for node or browser
-					env: 'node',
-					//env: 'browser',
-					exports: 'constructors'
+					env: 'browser',
+					exports: 'Constructors'
 				},
-				//Grunt files configuration object for which to trace dependencies
-				//(more: http://gruntjs.com/configuring-tasks)
                 files: [{
-					src: 'src/constructors.js',
-					dest: 'dist/constructors.js'
+					src: 'src/**/*.js',
+					dest: 'dist/browser/Constructors.js'
 				}]
 			}
 		},
@@ -30,11 +25,11 @@ module.exports = function( grunt ) {
 		uglify: {
 			all: {
 				options: {
-					banner: '/*! <%= pkg.title %> v<%= pkg.version %> | MIT license */\n'
+					banner: '/*! <%= pkg.name%> v<%= pkg.version %> | MIT license */\n'
 				},
 				files: [{
-					src: 'dist/constructors.js',
-					dest: 'dist/constructors.min.js'
+					src: 'dist/browser/Constructors.js',
+					dest: 'dist/browser/Constructors.min.js'
 				}]
 			}
 		},
@@ -173,7 +168,7 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks('grunt-amd-check');
 
 	grunt.registerTask('test', ['amd-test', 'qunit']);
-	grunt.registerTask('dist', ['clean:publish', 'nodefy', 'copy:publish']);
+	grunt.registerTask('dist', ['clean:publish', 'nodefy', 'amd-dist', 'uglify', 'copy:publish']);
 	grunt.registerTask('build', ['amd-dist', 'uglify']);
 
 };

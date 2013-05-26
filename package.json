@@ -1,7 +1,7 @@
 {
 	"name": "constructors",
 	"description": "Functional utility library for adding common behaviors to JavaScript constructor functions",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"homepage": "https://github.com/zship/constructors.js",
 	"author": "Zach Shipley <zach@zachshipley.com>",
 	"repository": {
@@ -25,8 +25,7 @@
 		"grunt-contrib-nodefy": "0.2.x",
 		"grunt-amd-dist": "0.4.x",
 		"grunt-amd-test": "0.4.x",
-		"grunt-amd-check": "0.4.x",
-		"nodefy": "0.2.x"
+		"grunt-amd-check": "0.4.x"
 	},
 	"keywords": []
 }
