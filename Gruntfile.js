@@ -95,6 +95,46 @@ module.exports = function( grunt ) {
 		},
 
 
+		nodefy: {
+			all: {
+				files: [{
+					src: 'src/**/*.js',
+					dest: 'dist/'
+				}]
+			}
+		},
+
+
+		copy: {
+			publish: {
+				files: [
+					{
+						src: [
+							'package.json',
+							'README.md'
+						],
+						dest: 'dist/'
+					},
+					{
+						expand: true,
+						cwd: 'src/',
+						src: '**/*.js',
+						dest: 'dist/amd/'
+					}
+				]
+			}
+		},
+
+
+		clean: {
+			publish: {
+				files: [{
+					src: 'dist/'
+				}]
+			}
+		},
+
+
 		requirejs: {
 			baseUrl: 'src',
 			optimize: 'none',
@@ -124,12 +164,16 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-qunit');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-connect');
+	grunt.loadNpmTasks('grunt-contrib-nodefy');
 	grunt.loadNpmTasks('grunt-amd-dist');
 	grunt.loadNpmTasks('grunt-amd-test');
 	grunt.loadNpmTasks('grunt-amd-check');
 
 	grunt.registerTask('test', ['amd-test', 'qunit']);
+	grunt.registerTask('dist', ['clean:publish', 'nodefy', 'copy:publish']);
 	grunt.registerTask('build', ['amd-dist', 'uglify']);
 
 };

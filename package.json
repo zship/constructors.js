@@ -10,19 +10,23 @@
 	},
 	"license": "MIT",
 	"dependencies": {
-		"mout": "0.6.x"
+		"mout": "0.6.x",
+		"deferreds": "0.2.x",
+		"stacktrace-js": "0.5.x"
 	},
 	"devDependencies": {
 		"grunt": "0.4.x",
 		"grunt-contrib-qunit": "0.2.x",
 		"grunt-contrib-uglify": "0.1.x",
 		"grunt-contrib-jshint": "0.1.x",
+		"grunt-contrib-clean": "0.4.x",
+		"grunt-contrib-copy": "0.4.x",
 		"grunt-contrib-connect": "0.3.x",
+		"grunt-contrib-nodefy": "0.2.x",
 		"grunt-amd-dist": "0.4.x",
 		"grunt-amd-test": "0.4.x",
 		"grunt-amd-check": "0.4.x",
-		"deferreds": "0.2.x",
-		"stacktrace-js": "0.5.x"
+		"nodefy": "0.2.x"
 	},
 	"keywords": []
 }

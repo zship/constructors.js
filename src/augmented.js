@@ -1,5 +1,7 @@
-/*jshint evil:true, strict:false */
 define(function(require) {
+
+	'use strict';
+
 
 	var compose = require('mout/function/compose');
 
