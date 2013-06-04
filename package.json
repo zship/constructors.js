@@ -25,7 +25,7 @@
 		"grunt-contrib-nodefy": "0.2.x",
 		"grunt-amd-dist": "0.4.x",
 		"grunt-amd-test": "0.4.x",
-		"grunt-amd-check": "0.4.x"
+		"grunt-amd-check": "0.5.x"
 	},
 	"keywords": []
 }
